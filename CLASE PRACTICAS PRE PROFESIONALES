@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CapaNegocio
+{
+    public class ppp
+    {
+        //Atributos
+        private string apellidos;
+        private string nombres;
+        private int edad;
+        private string lugarNacimiento;
+        //Propiedades
+        public string Apellidos
+        {
+            get { return apellidos; }//lectura de  atributo
+            set { apellidos = value; }// Excritura del atributo
+        }
+        public string Nombres
+        {
+            get { return nombres; }
+            set { nombres = value; }
+        }
+        public int Edad
+        {
+            get { return edad; }
+            set { edad = value; }
+        }
+        public string LugarNacimiento
+        {
+            get { return this.lugarNacimiento; }
+            set { this.lugarNacimiento = value; }
+        }
+
+        //metodos u operaciones
+        public string Mejorar()
+        {
+            return "Nose ha implementado el metodo estudiado";
+        }
+        public string Trabajar()
+        {
+            return "No se ha implementado el metodo trabajar";
+        }
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
+{
+    public partial class frmppp : Form
+    {
+        public frmppp()
+        {
+            InitializeComponent();
+        }
+        CapaNegocio.ppp ppp1 = new CapaNegocio.ppp();
+
+        private void btnLeer_Click(object sender, EventArgs e)
+        {
+            //Leer los datos del formulario
+            string apellidos = txtApellidos.Text;
+            string nombres = txtNombres.Text;
+            int edad = int.Parse(txtEdad.Text);
+            string lugarNacimiento = txtLugarNacimiento.Text;
+            ppp1.Apellidos = apellidos;
+            ppp1.Nombres = nombres;
+            ppp1.Edad = edad;
+            ppp1.LugarNacimiento = lugarNacimiento;
+            MessageBox.Show("Se han registrado correctamente los datos del rector 1");
+        }
+
+        private void btnEscribir_Click(object sender, EventArgs e)
+        {
+            //Mostrar los datos almacenados en el objeto 1
+            string apellidos = ppp1.Apellidos;
+            string nombres = ppp1.Nombres;
+            int edad = ppp1.Edad;
+            string lugarNacimiento = ppp1.LugarNacimiento;
+            MessageBox.Show("Apellidos: " + apellidos + "Nombres: " + nombres + "edad" +
+                "Lugar Nacimiento" + lugarNacimiento);
+        }
+    }
+}
