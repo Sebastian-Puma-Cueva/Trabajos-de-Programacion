@@ -1,0 +1,74 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CapaNegocio
+{
+    public class Laboratorio
+    {
+        //Atributos
+        private string tamaños;
+        private string nombres;
+        //Propiedades
+        public string Tamaños
+        {
+            get { return tamaños; }
+            set { tamaños = value; }
+        }
+        public string Nombres
+        {
+            get { return nombres; }
+            set { nombres = value; }
+        }
+        //metodos y operaciones
+        public string Investigar()
+        {
+            return "No se ha iplementado el metodo Investigar";
+        }
+        public string Analizar()
+        {
+            return "No se ha implementado el metodo Analizar";
+        }
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
+{
+    public partial class frmLaboratorio : Form
+    {
+        public frmLaboratorio()
+        {
+            InitializeComponent();
+        }
+        CapaNegocio.Laboratorio lab1 = new CapaNegocio.Laboratorio();
+        private void btnLeer_Click(object sender, EventArgs e)
+        {
+            string tamaños = txtTamaños.Text;
+            string nombres = txtNombres.Text;
+            lab1.Tamaños = tamaños;
+            lab1.Nombres = nombres;
+            MessageBox.Show("Se han registrado correctamente los datos del Laboratorio1");
+        }
+
+        private void btnEscribir_Click(object sender, EventArgs e)
+        {
+            string tamaños = lab1.Tamaños;
+            string nombres = lab1.Nombres;
+            MessageBox.Show("Tamaños: " + tamaños + "Nombres: " + nombres);
+        }
+    }
+}
