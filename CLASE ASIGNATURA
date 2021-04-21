@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CapaNegocio
+{
+    public class Asignatura
+    {
+        //Atributos
+        private string nombres;
+        private string dificultad;
+        private string tipo;
+        //Propiedades
+        public string Nombres
+        {
+            get { return nombres; }
+            set { nombres = value; }
+        }
+        public string Dificultad
+        {
+            get { return dificultad; }
+            set { dificultad = value; }
+        }
+        public string Tipo
+        {
+            get { return tipo; }
+            set { tipo = value; }
+        }
+        //Metodos y operaciones
+        public string Enseñar()
+        {
+            return "No se ha iplementado el metodo Enseñar";
+        }
+        public string AyudarFormacion()
+        {
+            return "No se ha implementado el metodo AyudarFormacion";
+        }
+        
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
+{
+    public partial class frmAsignatura : Form
+    {
+        public frmAsignatura()
+        {
+            InitializeComponent();
+        }
+        CapaNegocio.Asignatura Asg1 = new CapaNegocio.Asignatura();
+
+        private void btnLeer_Click(object sender, EventArgs e)
+        {
+            string nombres = txtNombres.Text;
+            string dificultad = txtDificultad.Text;
+            string tipo = txtTipo.Text;
+            Asg1.Nombres = nombres;
+            Asg1.Dificultad = dificultad;
+            Asg1.Tipo = tipo;
+
+            MessageBox.Show("Se han registrado correctamente los datos de la Asignatura");
+        }
+
+        private void btnEscribir_Click(object sender, EventArgs e)
+        {
+            //Mostrar los datos almacenados en el objeto 1
+            string nombres = Asg1.Nombres;
+            string dificultad = Asg1.Dificultad;          
+            string tipo = Asg1.Tipo;
+            MessageBox.Show("Nombres: " + nombres + "Dificultad: " + dificultad + "Tipo" + tipo);
+        }
+    }
+}
