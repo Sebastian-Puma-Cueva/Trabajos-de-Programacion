@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
+{
+    public partial class frmPrincipal : Form
+    {
+        public frmPrincipal()
+        {
+            InitializeComponent();
+        }
+
+        private void alumnpoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //llamar al formulario del alumno 
+            frmAlumno formulario = new frmAlumno();
+            formulario.Show();
+        }
+
+        private void docenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //llamar al formulario del docente 
+            frmDocente formulario = new frmDocente();
+            formulario.Show();
+        }
+
+        private void laboratorioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //llamar al formulario del laboratorio
+            frmLaboratorio formulario = new frmLaboratorio();
+            formulario.Show();
+        }
+
+
+
+        private void asignaturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //llamar al formulario del asignatura
+            frmAsignatura formulario = new frmAsignatura();
+            formulario.Show();
+        }
+
+        private void notasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //llamar al formulario del notas
+            frmNotas formulario = new frmNotas();
+            formulario.Show();
+        }
+
+        private void rectorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //llamar al formulario rector
+            frmRector formulario = new frmRector();
+            formulario.Show();
+        }
+
+        private void practicaspreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //llamar al formulario ppp
+            frmppp formulario = new frmppp();
+            formulario.Show();
+        }
+
+        private void jefePracticaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //llamar al formulario JefePractica
+            frmJefePractica formulario =new frmJefePractica
+            formulario.Show();
+        }
+    }
+}
