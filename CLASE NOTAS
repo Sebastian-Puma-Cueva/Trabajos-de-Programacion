@@ -1,0 +1,85 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CapaNegocio
+{
+    public class Notas
+    {
+        //Atributos
+        private string calificacion;
+        private string tamaño;
+        private string tipo;
+        // propiedades
+        public string Calificacion
+        {
+            get { return calificacion; }//lectura de  atributo
+            set { calificacion = value; }// Excritura del atributo
+        }
+        public string Tamaño
+        {
+            get { return tamaño; }//lectura de  atributo
+            set { tamaño = value; }// Excritura del atributo
+        }
+        public string Tipo
+        {
+            get { return tipo; }//lectura de  atributo
+            set { tipo = value; }// Excritura del atributo
+        }
+        //Metodos y operaciones
+        public string Aprobar()
+        {
+            return "No se ha implementado el meto Apobar";
+        }
+        public string Seleccionar()
+        {
+            return "No se ha implementado el metodo Seleccionar";
+        }
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace CapaPresentacion
+{
+    public partial class frmNotas : Form
+    {
+        public frmNotas()
+        {
+            InitializeComponent();
+        }
+        CapaNegocio.Notas notas1 = new CapaNegocio.Notas();
+
+        private void btnLeer_Click(object sender, EventArgs e)
+        {
+            string calificacion = txtCalificacion.Text;
+            string tamaño = txtTamaño.Text;
+            string tipo = txtTipo.Text;
+            notas1.Calificacion = calificacion;
+            notas1.Tamaño = tamaño;
+            notas1.Tipo = tipo;
+            MessageBox.Show("Se han registrado correctamente los datos de la Nota 1");
+        }
+
+        private void btnEscribir_Click(object sender, EventArgs e)
+        {
+            string calificacion = notas1.Calificacion;
+            string tamaño = notas1.Tamaño;
+            string tipo = notas1.Tipo;
+            MessageBox.Show("Calificacion: " + calificacion + "Tamaño: " + 
+                tamaño + "tipo" + tipo);
+        }
+    }
+}
